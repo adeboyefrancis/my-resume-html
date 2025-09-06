@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francis Adeboye - Professional CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f8f8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: #556b2f;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .name {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            color: #556b2f;
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #556b2f;
+        }
+
+        .profile-summary {
+            background: #f4f4f4;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #556b2f;
+            margin-bottom: 30px;
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .skills-category {
+            margin-bottom: 25px;
+        }
+
+        .skills-category h4 {
+            color: #556b2f;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .skills-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skills-category li {
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .skills-category li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: #556b2f;
+        }
+
+        .job {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        .job-header {
+            margin-bottom: 15px;
+        }
+
+        .job-title {
+            color: #333;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .company {
+            color: #556b2f;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .duration {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .job-description {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .job-description li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .job-description li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: #556b2f;
+        }
+
+        .education-item, .cert-item {
+            background: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border-left: 3px solid #556b2f;
+        }
+
+        .degree, .cert-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .institution, .cert-issuer {
+            color: #556b2f;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .year {
+            color: #666;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .cert-section {
+            margin-bottom: 25px;
+        }
+
+        .cert-section h4 {
+            color: #556b2f;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .cert-subsection {
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+
+        .cert-subsection h5 {
+            color: #333;
+            font-size: 0.95em;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .cert-subsection ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .cert-subsection li {
+            margin-bottom: 3px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 0.9em;
+        }
+
+        .cert-subsection li::before {
+            content: '○';
+            position: absolute;
+            left: 0;
+            color: #556b2f;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .name {
+                font-size: 2em;
+            }
+            
+            body {
+                padding: 10px;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #556b2f;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 0.9em;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .print-btn:hover {
+            background: #6b8e32;
+            transform: translateY(-2px);
+        }
+
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+            }
+            
+            .container {
+                box-shadow: none !important;
+                border-radius: 0 !important;
+            }
+            
+            .print-btn {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="name">Francis Adeboye</h1>
+            <div class="contact-info">
+                <div class="contact-item">📍 Location: Glasgow</div>
+                <div class="contact-item">📱 Mobile: 07405574472</div>
+                <div class="contact-item">📧 Email: adeboye.francis@icloud.com</div>
+                <div class="contact-item">💼 LinkedIn: www.linkedin.com/in/francis-a-adeboye</div>
+                <div class="contact-item">🌐 Portfolio: <a href="https://touchedbyfrancis.cloud/" target="_blank" style="color: white; text-decoration: underline;">https://touchedbyfrancis.cloud/</a></div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <section class="section">
+                <h3 class="section-title">Professional Profile</h3>
+                <div class="profile-summary">
+                    Azure/AWS IT professional with hands-on experience as a 2nd Line Technical Support Analyst, supporting enterprise infrastructures across Microsoft technologies, including Azure, M365, Active Directory, and Windows Server. Demonstrated ability to resolve complex incidents, assist with hybrid cloud services, and deliver reliable technical support to large user bases. Strong foundation in system troubleshooting, performance monitoring, and security compliance, with a customer-focused approach and proven collaboration across technical and business teams.
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Key Skills</h3>
+                <div class="two-column">
+                    <div>
+                        <div class="skills-category">
+                            <h4>Azure & Hybrid Cloud</h4>
+                            <ul>
+                                <li>Azure Administration (AZ-104)</li>
+                                <li>Entra ID/Azure AD</li>
+                                <li>CLI/ARM/Bicep</li>
+                                <li>Azure Groups</li>
+                                <li>Virtual Machines</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skills-category">
+                            <h4>Microsoft 365 Ecosystem</h4>
+                            <ul>
+                                <li>Exchange Online</li>
+                                <li>SharePoint</li>
+                                <li>OneDrive</li>
+                                <li>Teams</li>
+                                <li>PowerApps & permissions management</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skills-category">
+                            <h4>Infrastructure & Virtualisation</h4>
+                            <ul>
+                                <li>Windows 10/11, macOS</li>
+                                <li>AD administration</li>
+                                <li>SCCM deployments</li>
+                                <li>Intune/MDM/MAM</li>
+                                <li>Patch & compliance management</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="skills-category">
+                            <h4>Networking & Security</h4>
+                            <ul>
+                                <li>VPN (Fortinet)</li>
+                                <li>CyberArk</li>
+                                <li>Ruckus</li>
+                                <li>MFA implementation</li>
+                                <li>Security monitoring</li>
+                                <li>Qualys, Mimecast</li>
+                                <li>Compliance reporting</li>
+                                <li>Incident remediation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skills-category">
+                            <h4>Service Management</h4>
+                            <ul>
+                                <li>Incident, request, and change management (ITIL)</li>
+                                <li>ServiceNow</li>
+                                <li>SLA-driven delivery</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skills-category">
+                            <h4>Technical Leadership</h4>
+                            <ul>
+                                <li>Mentoring junior analysts</li>
+                                <li>Knowledge base documentation</li>
+                                <li>Cross-team collaboration</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skills-category">
+                            <h4>Process & Automation</h4>
+                            <ul>
+                                <li>Basic PowerShell scripting</li>
+                                <li>Workflow optimisation</li>
+                                <li>Infrastructure as Code for automation of repetitive tasks</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Professional Experience</h3>
+                
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">2nd Line Technical Support Analyst</div>
+                        <div class="company">Arnold Clark – Glasgow</div>
+                        <div class="duration">03/2025 – Present</div>
+                    </div>
+                    <ul class="job-description">
+                        <li>Provide enterprise-level support for Azure, Microsoft 365, and Active Directory environments, ensuring secure, stable, and reliable services for 10,000+ users.</li>
+                        <li>Administer Active Directory and Azure Groups, managing accounts, shared mailboxes, and security permissions to maintain access governance.</li>
+                        <li>Support Exchange Online, SharePoint, OneDrive, and Teams, troubleshooting synchronisation and configuration issues across hybrid environments.</li>
+                        <li>Perform application deployment and system consistency management using SCCM and Group Policy, ensuring standardised builds across the estate.</li>
+                        <li>Troubleshoot and remediate network and VPN issues via Fortinet VPN and FortiAuthenticator, improving secure remote access.</li>
+                        <li>Participate in monthly security patching and compliance remediation, proactively addressing vulnerabilities and out-of-compliance devices.</li>
+                        <li>Collaborate with Endpoint, Network, and Cybersecurity teams, escalating advanced cases and sharing knowledge across functions.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">Remote Helpdesk Technician (Part-Time)</div>
+                        <div class="company">Uhuru Global – Part-Time (Remote)</div>
+                        <div class="duration">Jun 2024 – February 2025</div>
+                    </div>
+                    <ul class="job-description">
+                        <li>Delivered remote support across Windows and Linux environments, resolving 15+ incidents weekly.</li>
+                        <li>Managed Active Directory account lifecycles, ensuring secure user provisioning and deprovisioning.</li>
+                        <li>Implemented multi-factor authentication (MFA), reducing unauthorised access incidents.</li>
+                        <li>Documented and standardised onboarding/account processes, improving efficiency and knowledge transfer.</li>
+                        <li>Monitored system logs and escalated potential threats, strengthening compliance with CIA Triad principles.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">Compliance Analyst</div>
+                        <div class="company">Ofgem – Glasgow, UK</div>
+                        <div class="duration">Aug 2023 – March 2025</div>
+                    </div>
+                    <ul class="job-description">
+                        <li>Enhanced security posture by implementing compliance policies, cutting risks by 25% and reducing data security incidents by 30%.</li>
+                        <li>Automated compliance workflows, improving productivity by 80%.</li>
+                        <li>Supported UAT deployments with 98% success, improving system reliability.</li>
+                        <li>Recognised for consistent delivery contributing to Net Zero initiatives.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">Data Analyst</div>
+                        <div class="company">Georgia Innovation & Technology Agency – Tbilisi, Georgia</div>
+                        <div class="duration">Oct 2020 – Feb 2022</div>
+                    </div>
+                    <ul class="job-description">
+                        <li>Enabled a 60% increase in government/investor funding to start-ups through data-driven grant allocation.</li>
+                        <li>Streamlined reporting processes, cutting senior reporting time by 35%.</li>
+                        <li>Ensured compliance with GDPR, ISO 27001, HIPAA, reducing security incidents by 30%.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-title">Reporting Analyst</div>
+                        <div class="company">Ikeja Electric – Lagos, Nigeria</div>
+                        <div class="duration">Jan 2014 – Mar 2015</div>
+                    </div>
+                    <ul class="job-description">
+                        <li>Developed KPI dashboards and automated reporting workflows to improve decision-making.</li>
+                        <li>Enhanced data integrity by implementing validation processes in reporting pipelines.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div class="two-column">
+                <section class="section">
+                    <h3 class="section-title">Education</h3>
+                    <div class="education-item">
+                        <div class="degree">MSc in Digital Marketing</div>
+                        <div class="institution">University of the West of Scotland</div>
+                        <div class="year">2022 – 2023</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="degree">Master of Business Administration (MBA)</div>
+                        <div class="institution">University of Georgia</div>
+                        <div class="year">2017 – 2020</div>
+                    </div>
+                    
+                    <div class="education-item">
+                        <div class="degree">BSc (Hons) in Business Information Systems</div>
+                        <div class="institution">University of East London</div>
+                        <div class="year">2010 – 2013</div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h3 class="section-title">Certifications</h3>
+                    
+                    <div class="cert-section">
+                        <h4>Microsoft (Azure & Infrastructure)</h4>
+                        <div class="cert-item">
+                            <div class="cert-name">Microsoft Certified: Azure Fundamentals (AZ-900)</div>
+                            <div class="year">Issued Nov 2024</div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-name">Microsoft Applied Skills:</div>
+                            <div class="cert-subsection">
+                                <ul>
+                                    <li>Deploy and Configure Azure Monitor</li>
+                                    <li>Azure Management Tasks</li>
+                                    <li>Secure Storage for Azure Files & Blob Storage</li>
+                                    <li>Administer Active Directory Domain Services</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-name">Preparing: Microsoft Certified: Azure Administrator Associate (AZ-104)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-section">
+                        <h4>Amazon Web Services (AWS)</h4>
+                        <div class="cert-item">
+                            <div class="cert-name">AWS Certified Solutions Architect – Associate</div>
+                        </div>
+                        <div class="cert-item">
+                            <div class="cert-name">AWS Certified Cloud Practitioner</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-section">
+                        <h4>Multicloud & Networking</h4>
+                        <div class="cert-item">
+                            <div class="cert-name">Aviatrix Multicloud Network Associate (MCNA)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="cert-section">
+                        <h4>Cybersecurity & IT Service Management</h4>
+                        <div class="cert-item">
+                            <div class="cert-name">Cisco: Introduction to Cybersecurity</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">🖨️ Print</button>
+</body>
+</html>
